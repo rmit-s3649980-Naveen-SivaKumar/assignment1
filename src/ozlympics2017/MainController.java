@@ -1,5 +1,6 @@
 package ozlympics2017;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 public class MainController {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		int userOption;
 		int mainOption;
@@ -40,7 +41,8 @@ public class MainController {
 			ArrayList<List<String>> participants = new ArrayList<List<String>>();
 			List<String> userList= new ArrayList<String>();
 			DataPopulator AP = new DataPopulator();
-			participants=new DataPopulator().dataPopulate();
+			Atheletes atheletes = new Atheletes();
+			AP.dataPopulate();
 			userOption=sc.nextInt()-1;
 			userList=participants.get(userOption);
 			
