@@ -15,10 +15,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class DataPopulator {
 	
-	public void dataPopulate() throws IOException {
+	public Atheletes dataPopulate() throws IOException {
 		String sample=null;
 		DataFormatter dataFormatter = new DataFormatter();
-		File myFile = new File("D://AthletesList.xlsx"); 
+		File myFile = new File("./Atheletes/AthletesList.xlsx"); 
 		FileInputStream fis = new FileInputStream(myFile); 
 		XSSFWorkbook myWorkBook = new XSSFWorkbook (fis);
 		XSSFSheet mySheet = myWorkBook.getSheetAt(0);
@@ -32,8 +32,6 @@ public class DataPopulator {
 	    atheletes.setSwimmersReferee(dataFormatter.formatCellValue(mySheet.getRow(randomGenerator.nextInt(2)+3).getCell(CellReference.convertColStringToIndex("D"))));
 	    atheletes.setCyclistReferee(dataFormatter.formatCellValue(mySheet.getRow(randomGenerator.nextInt(2)+3).getCell(CellReference.convertColStringToIndex("F"))));
 	    atheletes.setSuperAtheleteReferee(dataFormatter.formatCellValue(mySheet.getRow(randomGenerator.nextInt(2)+3).getCell(CellReference.convertColStringToIndex("H"))));
-	    String cyclistReferee;
-	    String superAtheleteReferee;
 	    HashSet<Integer> numbers= new HashSet<Integer>();
 	    ArrayList<Integer> numbersList= new ArrayList<Integer>();
 	    
@@ -62,14 +60,8 @@ public class DataPopulator {
 	    atheletes.setCyclist(cyclist);
 	    atheletes.setSuperAthelete(superAthelete);
 	    atheletes.setSwimmers(swimmers);
-	System.out.println(atheletes.getRunners());
-	System.out.println(atheletes.getSwimmers());
-	System.out.println(atheletes.getCyclist());
-	System.out.println(atheletes.getSuperAthelete());
-	System.out.println(atheletes.getRunnersReferee());
-	System.out.println(atheletes.getSwimmersReferee());
-	System.out.println(atheletes.getCyclistReferee());
-	System.out.println(atheletes.getSuperAtheleteReferee());
+	    return atheletes;
+	
 	}
 	
 }

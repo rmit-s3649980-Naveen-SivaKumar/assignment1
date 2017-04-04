@@ -1,9 +1,7 @@
 package ozlympics2017;
 
-public class Game {
+import java.util.ArrayList;
 
-	public void game(int i){
-		Predictor predictor = new Predictor();
-		predictor.predict(i);
-	}
+public interface Game {
+public ArrayList<Double> compete();
 }
