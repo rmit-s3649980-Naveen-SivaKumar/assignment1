@@ -9,6 +9,8 @@ public class Results {
 		
 		new Swimmer().swimmerWinner(winnersListSwimming);
 		new Runner().runnerWinner(winnersListRunning);
+		new Cyclist().cyclingWinner(winnersListCycling);
+		new Triathlon().triathlonWinner(winnersListTriathlon);
 		
 		System.out.println("\n");
 	}

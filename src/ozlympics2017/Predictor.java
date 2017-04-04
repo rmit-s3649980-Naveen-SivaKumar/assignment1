@@ -28,6 +28,20 @@ public class Predictor {
 				winners.put(i + 1, runners.get(i));
 			}
 		} 
+		else if (j == 3) {
+			List<String> cyclist = atheletes.getCyclist();
+			Collections.shuffle(cyclist);
+			for (int i = 0; i < 5; i++) {
+				winners.put(i + 1, cyclist.get(i));
+			}
+		} else if (j == 4) {
+			List<String> superAthelete = atheletes.getSuperAthelete();
+			Collections.shuffle(superAthelete);
+			for (int i = 0; i < 5; i++) {
+				winners.put(i + 1, superAthelete.get(i));
+			}
+		}
+		
 
 		return winners;
 	}
